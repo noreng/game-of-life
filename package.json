@@ -1,0 +1,22 @@
+{
+  "name": "game-of-life",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noreng/game-of-life.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noreng/game-of-life/issues"
+  },
+  "homepage": "https://github.com/noreng/game-of-life#readme",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
+}
