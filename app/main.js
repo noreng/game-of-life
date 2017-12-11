@@ -5,7 +5,7 @@ module.exports = class Game {
         this.alives = new Set();
     }
 
-    addCell(x,y) {
+    addCell(x, y) {
         this.alives.add('foo');
     }
 
@@ -13,14 +13,14 @@ module.exports = class Game {
         return `${row},${col}`;
     }
 
-    getNeighboursCoords(row,col) {
+    getNeighboursCoords(row, col) {
         const coords = [];
         const topLeftRow = row - 1;
         const topLeftCol = col - 1;
         const indexesFromTopLeft = [
-            [0,1,2],
-            [0,  2],
-            [0,1,2],
+            [0, 1, 2],
+            [0, 2],
+            [0, 1, 2],
         ];
         indexesFromTopLeft.forEach((columns, rowIdx) => {
             columns.forEach(colIdx => {
