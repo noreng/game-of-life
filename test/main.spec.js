@@ -34,7 +34,7 @@ describe('Game of life', function () {
         ]);
     });
 
-    it('should count living cells around a position', function () {
+    it('should return zero living cells around a position', function () {
         const game = new Game();
         const numberOfLivingCells = game.getNumberOfLivingCells(0, 0);
         assert.equal(numberOfLivingCells, 0);
