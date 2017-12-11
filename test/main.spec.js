@@ -39,4 +39,11 @@ describe('Game of life', function () {
         const numberOfLivingCells = game.getNumberOfLivingCells(0, 0);
         assert.equal(numberOfLivingCells, 0);
     });
+
+    it('should return 1 living cell around a position', function () {
+        const game = new Game();
+        game.addCell(0, 1);
+        const numberOfLivingCells = game.getNumberOfLivingCells(0, 0);
+        assert.equal(numberOfLivingCells, 1);
+    });
 });
