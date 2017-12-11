@@ -30,4 +30,8 @@ module.exports = class Game {
         });
         return coords;
     }
+
+    getNumberOfLivingCells(row, col) {
+        return 0;
+    }
 };
