@@ -63,4 +63,14 @@ describe('Game of life', function () {
         const numberOfLivingCells = game.getNumberOfLivingCells(0, 0);
         assert.equal(numberOfLivingCells, 3);
     });
+
+    describe('Get next state of a position', function () {
+        // https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Rules
+        it('rule#1 - Any live cell with fewer than two live neighbours dies, as if caused by underpopulation', function () {
+            const game = new Game();
+            game.addCell(0, 1);
+            const isAlive = game.getNextState(0, 1);
+            assert.equal(isAlive, false);
+        });
+    });
 });
