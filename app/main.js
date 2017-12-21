@@ -5,8 +5,9 @@ module.exports = class Game {
         this.alives = new Set();
     }
 
-    addCell(x, y) {
-        this.alives.add('foo');
+    addCell(row, col) {
+        const posKey = this.getPositionKey(row, col);
+        this.alives.add(posKey);
     }
 
     getPositionKey(row, col) {
@@ -32,6 +33,12 @@ module.exports = class Game {
     }
 
     getNumberOfLivingCells(row, col) {
-        return 0;
+        const neighbours = this.getNeighboursCoords(row, col);
+        return neighbours.reduce((numberOfLivingCells, posKey) => {
+            if (this.alives.has(posKey)) {
+                numberOfLivingCells++;
+            }
+            return numberOfLivingCells;
+        }, 0);
     }
 };
