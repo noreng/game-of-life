@@ -82,6 +82,14 @@ describe('Game of life', function () {
             game.addCell(0, 1);
             const isAlive = game.getNextState(0, 1);
             assert.equal(isAlive, false);
-        })
+        });
+        it('rule#2 - Any live cell with two or three live neighbours lives on to the next generation.', function () {
+            const game = new Game();
+            game.addCell(0, 1);
+            game.addCell(1, 1);
+            game.addCell(0, 0);
+            const isAlive = game.getNextState(0, 1);
+            assert.equal(isAlive, true);
+        });
     });
 });
