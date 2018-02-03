@@ -41,4 +41,11 @@ module.exports = class Game {
             return numberOfLivingCells;
         }, 0);
     }
+
+    getNextState(row, col) {
+        // rule #1
+        if (this.getNumberOfLivingCells(row, col) < 2) {
+            return false;
+        }
+    }
 };

@@ -54,14 +54,25 @@ describe('Game of life', function () {
         assert.equal(numberOfLivingCells, 0);
     });
 
+
+    /*
+         x | x | x
+         x |0,0| x
+         x | x | x
+     */
     it('should return all living cells around a position', function () {
         const game = new Game();
         game.addCell(0, 1);
-        game.addCell(0, 1);
         game.addCell(1, 0);
         game.addCell(1, 1);
+        game.addCell(0, -1);
+        game.addCell(-1, 1);
+        game.addCell(1, -1);
+        game.addCell(-1, 0);
+        game.addCell(-1, -1);
+        game.addCell(0, -1);
         const numberOfLivingCells = game.getNumberOfLivingCells(0, 0);
-        assert.equal(numberOfLivingCells, 3);
+        assert.equal(numberOfLivingCells, 8);
     });
 
     describe('Get next state of a position', function () {
@@ -71,6 +82,6 @@ describe('Game of life', function () {
             game.addCell(0, 1);
             const isAlive = game.getNextState(0, 1);
             assert.equal(isAlive, false);
-        });
+        })
     });
 });
